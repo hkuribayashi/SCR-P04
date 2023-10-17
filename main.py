@@ -1,3 +1,4 @@
+import time
 import random
 
 
@@ -30,7 +31,10 @@ if __name__ == '__main__':
     print(msg_criptografada)
 
     # Tentando decodificar a msg sem saber o valor da chave
+    inicio = time.time()
     print("Mensagem Criptografada: {}".format(msg_criptografada))
     for chave in range(26):
         mensagem_plana = decriptografar(msg_criptografada, chave)
         print("Chave: {} | Mensagem: {}".format(chave, mensagem_plana))
+    fim = time.time()
+    print("Tempo Total de Execução: {}".format(fim - inicio))
